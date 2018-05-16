@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="kpu.noricar.Login">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email  : "
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/et_loginEmail"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PW : "
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/et_loginPwd"
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textSize="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <Button
+        android:text="LOGIN"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:id="@+id/bt_Login"
+        android:clickable="true"
+        android:onClick="bt_login"
+        android:textAlignment="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:text="JoinPage"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:textAlignment="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        tools:ignore="HardcodedText"
+        android:onClick="bt_JoinPage"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="kpu.noricar.Join">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <TextView android:text="NAME : "/>
+            <EditText android:id="@+id/et_name" android:width="300dp"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="PHONE : "/>
+            <EditText android:id="@+id/et_phone" android:width="300dp"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="EMAIL : "/>
+            <EditText android:id="@+id/et_email" android:width="300dp"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="PASSWORD : "/>
+            <EditText android:id="@+id/et_pwd" android:width="250dp" android:inputType="textPassword"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="PWD Check : "/>
+            <EditText android:id="@+id/et_pwCheck" android:width="210dp" android:inputType="textPassword"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:text="Join"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:id="@+id/bt_Join"
+        android:clickable="true"
+        android:onClick="bt_Join"
+        android:textAlignment="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

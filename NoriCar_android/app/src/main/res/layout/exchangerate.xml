@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#012034"
+    tools:context="kpu.noricar.ExchangeRate">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text=" [카풀 제공 정보] " />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center">
+
+        <TableRow>
+            <TextView android:text="출발지 : "/>
+            <TextView android:id="@+id/tv_startLocal"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="목적지 : "/>
+            <TextView android:id="@+id/tv_destLocal"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="요금 : "/>
+            <TextView android:id="@+id/tv_profare"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="제공자 이름 : "/>
+            <TextView android:id="@+id/pro_name"/>
+        </TableRow>
+        <TableRow>
+            <TextView android:text="제공자 연락처 : "/>
+            <TextView android:id="@+id/pro_phone"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="bt_request"
+        android:text="요청하기"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="제공 정보 불러오기"
+        android:id="@+id/bt_provideInfo"/>
+</LinearLayout>

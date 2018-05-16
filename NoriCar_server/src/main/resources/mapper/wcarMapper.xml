@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- WCar SQL -->
+<mapper namespace="com.scmaster.wcar.dao.WcarMapper">
+
+	<!-- 회원 정보 저장 -->
+	<insert id="insertUser" parameterType="user">
+		insert into wcar_user (
+			usernum
+			,name
+			,phone
+			,password
+			,email
+		)
+		values (
+			wcar_user_seq.nextval
+			, #{name}
+			, #{phone}
+			, #{password}
+			, #{email}
+		)
+	</insert>
+	
+	<!-- 회원 로그인 -->
+	<select id="loginUser" parameterType="user" resultType="user">
+		select
+			usernum
+			,name
+			,phone
+			,password
+			,email
+		from
+			wcar_user
+		where
+			email = #{email}
+		and
+			password = #{password}
+	</select>
+	
+	<!-- 로그인 시 토큰 값 저장 -->
+	<update id="updateToken" parameterType="user">
+		update
+			wcar_user
+		set
+			token = #{token}
+		where
+			email = #{email}
+		and
+			password = #{password}
+	</update>
+	
+	<!-- 회원 찾기 -->
+	<select id="selectUser" parameterType="user" resultType="user">
+		select
+			usernum
+			,name
+			,phone
+			,password
+			,email
+		from
+			wcar_user
+		where
+			usernum = #{usernum}
+	</select>
+	
+	
+	<!-- 제공 정보 등록 -->
+	<insert id="insertProvide" parameterType="provide">
+		insert into wcar_provide(
+			pronum
+			,usernum
+			,pay
+			,startx
+			,starty
+			,destx
+			,desty
+		)
+		values(
+			wcar_provide_seq.nextval
+			,#{usernum}
+			,#{pay}
+			,#{startx}
+			,#{starty}
+			,#{destx}
+			,#{desty}
+		)
+	</insert>
+	
+	<!-- 제공 정보 모두 검색 -->
+	<select id="selectAll" resultType="provide">
+		select
+			pronum
+			,usernum
+			,pay
+			,startx
+			,starty
+			,destx
+			,desty
+			,request
+		from
+			wcar_provide
+	</select>
+	
+	<!-- 요청 정보 들어옴 -->
+	<update id="updateProvide" parameterType="provide">
+		update
+			wcar_provide
+		set
+			request = 1
+		where
+			usernum = #{usernum}
+		and
+			startx = #{startx}
+		and
+			starty = #{starty}
+		and
+			destx = #{destx}
+		and
+			desty = #{desty}
+	</update>
+	
+	<select id="selectPush" parameterType="provide" resultType="provide">
+		select
+			request
+		from
+			wcar_provide
+		where
+			usernum = #{usernum}
+		and
+			startx = #{startx}
+		and
+			starty = #{starty}
+		and
+			destx = #{destx}
+		and
+			desty = #{desty}
+	</select>
+	
+	<select id="checkRequest" parameterType="int" resultType="provide">
+		select
+			request
+		from
+			wcar_provide
+		where
+			usernum = #{usernum}
+	</select>
+	
+	<delete id="deleteProvide" parameterType="provide">
+		delete
+			wcar_provide
+		where
+			usernum = #{usernum}
+	</delete>
+</mapper>
